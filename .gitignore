@@ -1,12 +1,14 @@
-# IntelliJ
+# IntelliJ IDEA
 .idea/
+*.iml
 
 # Compilação
 out/
 *.class
 
-# Arquivos do sistema
-*.iml
-
-# Persistência local
+# Arquivos de dados
 biblioteca.dat
+
+# Sistema
+.DS_Store
+Thumbs.db
