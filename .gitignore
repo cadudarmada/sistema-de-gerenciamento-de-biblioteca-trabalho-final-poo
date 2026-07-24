@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+
+# Compilação
+out/
+*.class
+
+# Arquivos do sistema
+*.iml
+
+# Persistência local
+biblioteca.dat
