@@ -1,0 +1,45 @@
+SISTEMA DE GERENCIAMENTO DE BIBLIOTECA - PROJETO FINAL DE POO
+================================================================
+
+COMO COMPILAR E RODAR (pelo terminal):
+
+1) Entrar na pasta "src":
+   cd biblioteca_projeto/src
+
+2) Compilar todas as classes:
+   javac biblioteca/*.java -d ../bin
+
+3) Rodar o programa:
+   java -cp ../bin biblioteca.Main
+
+Obs: também dá pra importar a pasta "src" como projeto novo no Eclipse ou
+IntelliJ e rodar direto pela classe Main.java.
+
+ESTRUTURA DO PROJETO
+---------------------
+- Pessoa.java              -> classe abstrata (base de Leitor e Bibliotecario) - HERANÇA
+- Leitor.java               -> herda de Pessoa
+- Bibliotecario.java        -> herda de Pessoa
+- Livro.java                -> classe base dos livros do acervo
+- LivroDigital.java         -> herda de Livro e sobrescreve métodos - POLIMORFISMO
+- Emprestimo.java           -> liga um Leitor, um Livro e o Bibliotecario que atendeu - AGREGAÇÃO
+- Biblioteca.java           -> guarda as listas de livros/leitores/bibliotecários/empréstimos - COMPOSIÇÃO
+                               e cuida da PERSISTÊNCIA (salva/carrega o arquivo biblioteca.dat)
+- LivroIndisponivelException.java  -> exceção customizada
+- LimiteEmprestimosException.java  -> exceção customizada
+- TelaLogin.java            -> tela de login do bibliotecário (aparece antes da tela principal)
+- TelaPrincipal.java        -> interface gráfica principal (javax.swing)
+- Main.java                 -> classe com o método main()
+
+COMO FUNCIONA O LOGIN
+-----------------------
+Ao abrir o programa, aparece uma tela pedindo o "registro funcional" do
+bibliotecário. Se o registro já existir, ele entra direto. Se for um registro
+novo, o programa pede nome, CPF e telefone e cadastra esse bibliotecário na
+hora. Depois disso, todo empréstimo feito na tela principal fica registrado
+com o nome de quem atendeu (aparece na Listagem Geral).
+
+Ao fechar a janela do programa, os dados são salvos automaticamente no
+arquivo "biblioteca.dat" (fica na mesma pasta de onde o programa foi rodado).
+Na próxima vez que abrir, ele carrega os dados salvos de novo (inclusive os
+bibliotecários já cadastrados, que não precisam se cadastrar de novo).
